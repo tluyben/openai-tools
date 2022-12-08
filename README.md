@@ -20,3 +20,10 @@ Make you have openai installed and in the current path, as well as the OPENAI_AP
 
 - run  ```node fine-tune-gpt3.js``` for help
 
+# License 
+
+MIT 
+
+Disclaimer: for localhost experimentation only, we accept no liability. 
+
+Support my open source work by <a href="https://twitter.com/luyben">following me on twitter <img src="https://storage.googleapis.com/saasify-assets/twitter-logo.svg" alt="twitter" height="24px" align="center"></a>
