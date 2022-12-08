@@ -48,6 +48,10 @@ async function collectFiles(dir, rec) {
     return result;
 }
 
+function createCompletion(str) {
+    return `{"prompt": "", "completion": ${JSON.stringify(' ' + str)}}`;
+}
+
 // Function to read all files in a directory and output lines of JSON
 async function readDirectory(dir, targetFile, rec = false) {
     // Read the files in the directory
@@ -68,14 +72,14 @@ async function readDirectory(dir, targetFile, rec = false) {
                 currentString += `${word} `;
             } else {
                 // write to targetFile; 
-                await target.write(`{"prompt": "", "completion": ${JSON.stringify(currentString)}}\n`);
+                await target.write(`${createCompletion(currentString)}\n`);
                 //console.log(`{"prompt": "", "completion": ${JSON.stringify(currentString)}}`)
                 currentString = ''
             }
         }
     }
     if (currentString.length > 0) {
-        await target.write(`{"prompt": "", "completion": ${JSON.stringify(currentString)}}\n`);
+        await target.write(`${createCompletion(currentString)}\n`);
     }
 
     // close targetFile 
