@@ -9,3 +9,5 @@ This is a collection of little tools I use to play around with the OpenAI API's.
 - or yarn 
 
 ## Tools 
+
+- run  ```node fine-tune-gpt3.js``` for help
